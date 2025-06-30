@@ -383,6 +383,47 @@ exportar_datos_json(f"backup_diario_{fecha}.json")
 
 ## 📝 **Notas de Desarrollo y Arquitectura**
 
+### 🆚 **Diferencia Clave: Backups vs datos_prueba.py**
+
+#### 📋 **`datos_prueba.py` - Datos de Demostración**
+```python
+# PROPÓSITO: Poblar el sistema con datos de ejemplo para testing/demos
+python datos_prueba.py  # Genera siempre los mismos datos desde cero
+```
+
+**Características:**
+- ✅ **Datos estáticos predefinidos** - Siempre genera los mismos registros
+- ✅ **Para desarrollo y testing** - Ideal para demostraciones
+- ✅ **Resetea completamente** - Borra datos existentes y crea nuevos
+- ✅ **60+ registros de ejemplo** - Propietarios, pacientes, citas, etc.
+- ✅ **Relaciones consistentes** - Datos interconectados lógicamente
+
+#### 💾 **Backups JSON - Datos Reales del Sistema**
+```python
+# PROPÓSITO: Guardar/restaurar el estado real del sistema en uso
+from data.db import exportar_datos_json
+exportar_datos_json("backup_20241201_clinica.json")
+```
+
+**Características:**
+- ✅ **Datos dinámicos reales** - Estado actual del sistema en producción
+- ✅ **Para respaldo y recuperación** - Protección contra pérdida de datos
+- ✅ **Preserva cambios** - Incluye todas las modificaciones realizadas
+- ✅ **Con metadatos** - Fecha, estadísticas, validación de integridad
+- ✅ **Formato estructurado** - JSON normalizado para migración/auditoría
+
+#### 🎯 **Casos de Uso Prácticos**
+
+| Escenario | Usar `datos_prueba.py` | Usar Backup JSON |
+|-----------|------------------------|-------------------|
+| **Primera vez usando el sistema** | ✅ Sí | ❌ No |
+| **Demostración a clientes** | ✅ Sí | ❌ No |
+| **Testing de funcionalidades** | ✅ Sí | ❌ No |
+| **Respaldo diario de la clínica** | ❌ No | ✅ Sí |
+| **Migrar a nuevo servidor** | ❌ No | ✅ Sí |
+| **Recuperar datos perdidos** | ❌ No | ✅ Sí |
+| **Auditoría de datos** | ❌ No | ✅ Sí |
+
 ### 📊 **Supuestos del Sistema**
 1. **Un propietario por paciente** - Simplifica la gestión
 2. **Un veterinario por cita** - Facilita la asignación
