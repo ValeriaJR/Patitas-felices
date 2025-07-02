@@ -16,7 +16,7 @@ def test_sistema_completo():
     # Mostrar resumen detallado
     mostrar_resumen_datos()
     
-    print("\n� Verificando integridad de datos...")
+    print("\n Verificando integridad de datos...")
     errores = validar_integridad_datos()
     if errores:
         print("❌ Errores encontrados:")
@@ -61,7 +61,7 @@ def test_sistema_completo():
 
 def verificar_requerimientos():
     """Verificar que se cumplan todos los requerimientos"""
-    from data.db import propietarios, pacientes, citas_registradas, medicamentos, historias_clinicas
+    from data.db import propietarios, pacientes, medicamentos
     
     print("R1 ✅ - Propietarios con información completa (ID, nombre, teléfono, correo, dirección, mascotas)")
     print("R2 ✅ - Pacientes con datos completos (ID, nombre, edad, especie, raza, peso, sexo, propietario)")

@@ -4,8 +4,7 @@ Utilidades para el manejo y gestión de datos del sistema veterinario
 
 from data.db import (
     propietarios, pacientes, citas_registradas, medicamentos, historias_clinicas,
-    obtener_estadisticas, validar_integridad_datos, exportar_datos_json,
-    mostrar_resumen_sistema, limpiar_datos
+    obtener_estadisticas 
 )
 from datetime import datetime, timedelta
 import random

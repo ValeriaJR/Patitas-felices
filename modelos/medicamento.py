@@ -22,6 +22,7 @@ class Medicamento:
             return dias_restantes <= dias_alerta
         except:
             return False
+            raise
 
     def necesita_restock(self):
         """Verifica si el medicamento necesita restock (está al 10% o menos)"""

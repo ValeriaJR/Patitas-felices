@@ -140,10 +140,6 @@ python main.py            # Explorar funcionalidades
 exportar_datos_json("backup_clinica_AAAAMMDD.json")
 ```
 
-**💡 Analogía Simple:**
-- `datos_prueba.py` = **Maniquís en una tienda** (para mostrar ropa)
-- `Backup JSON` = **Inventario real de la tienda** (para no perder mercancía)
-
 ---
 
 *Ambos son importantes pero sirven propósitos completamente diferentes* 🎯
